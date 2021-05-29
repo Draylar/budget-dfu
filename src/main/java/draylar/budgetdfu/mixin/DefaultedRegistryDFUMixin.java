@@ -39,4 +39,27 @@ public class DefaultedRegistryDFUMixin {
 
         return id;
     }
+
+    @ModifyVariable(method = "getOrEmpty", at = @At("HEAD"), index = 1)
+    private Identifier remapOptionalRegistryRetrieval(Identifier id) {
+        // If the ID passed in is null, return the default value of this registry.
+        if(id == null) {
+            return defaultId;
+        }
+
+        @Nullable Identifier direct = BudgetDFU.remapDirect((DefaultedRegistry) (Object) this, id);
+
+        // If a direct Identifier remap was found, apply it now & return.
+        if(direct != null) {
+            return direct;
+        }
+
+        // If a namespace remap is applicable, apply now & return.
+        String updatedNamespace = BudgetDFU.remapNamespace((DefaultedRegistry) (Object) this, id.getNamespace());
+        if(updatedNamespace != null) {
+            return new Identifier(updatedNamespace, id.getPath());
+        }
+
+        return id;
+    }
 }
