@@ -8,6 +8,18 @@ you have an item with the ID of `tcraft:epic_sword`, but you want to update the 
 
 ### Bundling
 
+```groovy
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+```
+
+```groovy
+dependencies {
+    modImplementation 'com.github.Draylar:budget-dfu:master-SNAPSHOT'
+    include 'com.github.Draylar:budget-dfu:master-SNAPSHOT'
+}
+```
 
 ### Usage
 
