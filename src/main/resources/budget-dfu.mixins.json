@@ -4,7 +4,8 @@
   "package": "draylar.budgetdfu.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "DefaultedRegistryDFUMixin"
+    "DefaultedRegistryDFUMixin",
+    "RegistryDFUMixin"
   ],
   "client": [
   ],
