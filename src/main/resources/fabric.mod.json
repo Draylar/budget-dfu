@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "budget-dfu",
+  "version": "${version}",
+  "name": "Budget DFU",
+  "description": "Data Fixer Uppers on a budget.",
+  "authors": [
+    "Draylar"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "environment": "*",
+  "mixins": [
+    "budget-dfu.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": "*",
+    "fabric": "*",
+    "minecraft": "*"
+  }
+}
